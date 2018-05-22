@@ -2,6 +2,12 @@
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
+# Installtion
+
+1. download the files ,Click`"Clone in Desktop" / "Download ZIP"`.
+2. extract the files.
+3. open index.html.
+4. scroll down to show the tests results and specs.
 
 # The Contained Tests
 
@@ -15,3 +21,6 @@ In this project you are given a web-based application that reads RSS feeds. The 
 - test suite named `"New Feed Selection"`.
 - test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
 - No test is dependent on the results of another.
+
+# Reference
+- [Jasmine Documentation](https://jasmine.github.io/2.2/introduction.html).
