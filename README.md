@@ -7,7 +7,7 @@ In this project you are given a web-based application that reads RSS feeds. The 
 1. download the files ,Click`"Clone in Desktop" / "Download ZIP"`.
 2. extract the files.
 3. open index.html.
-4. scroll down to show the tests results and specs.
+4. scroll down to show the tests results and specs at the bottom of the page.
 
 # The Contained Tests
 
