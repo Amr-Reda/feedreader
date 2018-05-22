@@ -60,9 +60,9 @@ $(function() {
       * the CSS to determine how we're performing the
       * hiding/showing of the menu element.
       */
-      var bodyTag=document.querySelector('body');
+      var $bodyTag = $('body');
       it('hidden by default',function () {
-        expect(bodyTag.className).toBe('menu-hidden');
+        expect($bodyTag.hasClass('menu-hidden')).toBe(true);
       });
 
       /* TODO: Write a test that ensures the menu changes
@@ -71,22 +71,13 @@ $(function() {
       * clicked and does it hide when clicked again.
       */
 
-      // var $body = $('body');
-      // var menu = $('.menu-icon-link');
-      // it('visibility changed when the menu icon is clicked', function(){
-      //      menu.click();
-      //      expect($body.hasClass('menu-hidden')).toBe(false);
-      //
-      //      menu.click();
-      //      expect($body.hasClass('menu-hidden')).toBe(true);
-      //  });
-       var menu=document.querySelector('.menu-icon-link');
+       var menu = $('.menu-icon-link');
        it('visibility changed when the menu icon is clicked', function(){
             menu.click();
-            expect(bodyTag.className).not.toBe('menu-hidden');
+            expect($bodyTag.hasClass('menu-hidden')).toBe(false);
 
             menu.click();
-            expect(bodyTag.className).toBe('menu-hidden');
+            expect($bodyTag.hasClass('menu-hidden')).toBe(true);
         });
     });
 
@@ -107,8 +98,8 @@ $(function() {
       });
 
       it('there is at leasst a single entry',function (done) {
-        var entry=document.querySelectorAll('.entry');
-        expect(entry.length).not.toBe(0);
+        var entry=document.querySelectorAll('.feed .entry');
+        expect(entry.length).toBeGreaterThan(0);
         done();
       });
     });
@@ -126,18 +117,17 @@ $(function() {
       beforeEach(function (done) {
         loadFeed(0, function() {
                 oldFeed=document.querySelector('.feed').innerHTML;
-                done();
+                loadFeed(1,function () {
+                  done();
+                });
             });
       });
 
       it('a new feed is loaded with new content',function (done) {
-        loadFeed(1, function() {
-                newFeed=document.querySelector('.feed').innerHTML;
-                expect(newFeed).not.toEqual(oldFeed);
-                done();
-      });
-    });
-  });
-
-
+              newFeed=document.querySelector('.feed').innerHTML;
+              expect(newFeed).not.toEqual(oldFeed);
+              done();
+            });
+          });
 }());
+
